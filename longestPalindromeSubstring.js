@@ -1,4 +1,4 @@
-//longest Palindrome substring in a string
+//longest Palindrome substring in a string using dynamic programming in javascript
 
 const str = "abcba";
 const length = str.length;
