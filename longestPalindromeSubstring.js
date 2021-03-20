@@ -12,9 +12,9 @@ function printArr(arr) {
 }
 
 for (let i = 0; i < length; i++) {
-  const subArr = new Array(length).fill(0);
-  subArr[i] = 1;
-  if (str[i + 1] && str[i] == str[i + 1]) subArr[i + 1] = 1;
+  const subArr = new Array(length).fill(false);
+  subArr[i] = true;
+  if (str[i + 1] && str[i] == str[i + 1]) subArr[i + 1] = true;
   MDArray.push(subArr);
 }
 
@@ -25,8 +25,8 @@ for (let p = 2; p < length; p++) {
   j = p;
   i = 0;
   for (let k = 0; k < length; k++) {
-    if (str[i] == str[j] && MDArray[i + 1][j - 1] == 1) {
-      MDArray[i][j] = 1;
+    if (str[i] == str[j] && MDArray[i + 1][j - 1]) {
+      MDArray[i][j] = true;
       LPS.start = i;
       LPS.end = j;
     }
